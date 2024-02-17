@@ -12,9 +12,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.0.0"),
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "6.24.2"),
-        
-        // Local Dependencies
-        .package(path: "/Users/daniellyons/Developer/My Swift Packages/FileManagerClient"),
+        .package(url: "git@github.com:DandyLyons/FileManagerClient.git", branch: "main"),
     ],
     targets: [
       
