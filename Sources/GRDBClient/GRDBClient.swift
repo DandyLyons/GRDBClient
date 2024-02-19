@@ -92,11 +92,11 @@ extension GRDBClient: TestDependencyKey {
         
       }
       guard let dbQueue else {
-#if DEBUG
+//#if DEBUG
         fatalError("Failed to make in memory copy of database.")
-#else
-        Logger.grdbClient().error("Failed to make in memory copy of database.")
-#endif
+//#else
+//        Logger.grdbClient().error("Failed to make in memory copy of database.")
+//#endif
       }
       result = dbQueue
       var migrator = DatabaseMigrator()
@@ -104,11 +104,11 @@ extension GRDBClient: TestDependencyKey {
       do {
         try migrator.migrate(result)
       } catch {
-#if DEBUG
+//#if DEBUG
         fatalError("Failed to make in memory copy of database.")
-#else
-        Logger.grdbClient().error("Failed to make in memory copy of database.")
-#endif
+//#else
+//        Logger.grdbClient().error("Failed to make in memory copy of database.")
+//#endif
       }
       return result
     }()
