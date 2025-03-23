@@ -10,12 +10,21 @@
       }
     },
     {
+      "identity" : "filemanagerclient",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DandyLyons/FileManagerClient",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c9998a05ad7a9ab8fecf0f10987a6a925033a0d7"
+      }
+    },
+    {
       "identity" : "grdb.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/groue/GRDB.swift.git",
       "state" : {
-        "revision" : "e069e2732e3ee2b67bf89c1bda1937da0eaee7ef",
-        "version" : "6.24.2"
+        "revision" : "52b7b7bd26821c67f1c26b5e248fd6bcac4903a7",
+        "version" : "7.4.0"
       }
     },
     {
