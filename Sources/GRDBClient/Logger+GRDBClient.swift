@@ -1,11 +1,10 @@
 @_exported import OSLog
 
 extension Logger {
-  static let subsystem = "GRDBClient"
   enum Category: String {
-    case `default`
+    case transactions, backups, migrations
   }
-  static func grdbClient(_ category: Category = .default) -> Self {
-    Logger(subsystem: subsystem, category: category.rawValue)
+  static func grdbClient(_ category: Category) -> Self {
+    Logger(subsystem: "GRDBClient", category: category.rawValue)
   }
 }

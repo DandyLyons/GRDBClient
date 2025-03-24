@@ -16,7 +16,7 @@ extension DatabaseWriter {
         }
       }
     } catch {
-      Logger.grdbClient().error("Failed to clear database: \(error)")
+        Logger.grdbClient(.transactions).error("Failed to clear database: \(error)")
     }
   }
 }
