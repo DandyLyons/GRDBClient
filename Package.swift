@@ -12,15 +12,12 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.0.0"),
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "7.0.0"),
-        .package(url: "https://github.com/DandyLyons/FileManagerClient", branch: "main"),
-//        .package(path: "/Users/daniellyons/Developer/My Swift Packages/FileManagerClient")
     ],
     targets: [
       
       .target(
         name: "GRDBClient",
         dependencies: [
-          "FileManagerClient",
           .product(name: "Dependencies", package: "swift-dependencies"),
           .product(name: "DependenciesMacros", package: "swift-dependencies"),
           .product(name: "GRDB", package: "grdb.swift")
