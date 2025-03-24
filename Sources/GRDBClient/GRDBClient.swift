@@ -3,7 +3,6 @@ import Foundation
 @_exported import Dependencies
 @_exported import DependenciesMacros
 @_exported import GRDB
-@_exported import FileManagerClient
 
 
 public extension DependencyValues {
