@@ -9,6 +9,7 @@ extension DependencyValues {
   }
 }
 
+/// A client for ``DBMigration``s. ⚠️ I'm not sure this client is necessary. 
 @DependencyClient
 public struct DatabaseMigratorClient: Sendable {
   public static let unimplemented = Self()
