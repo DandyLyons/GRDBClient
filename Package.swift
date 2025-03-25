@@ -10,6 +10,7 @@ let package = Package(
       .singleTargetLibrary("GRDBClient"),
     ],
     dependencies: [
+        .package(url: "https://github.com/DandyLyons/LoggerFactory", from: "1.0.0"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.0.0"),
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "7.0.0"),
     ],
@@ -20,7 +21,8 @@ let package = Package(
         dependencies: [
           .product(name: "Dependencies", package: "swift-dependencies"),
           .product(name: "DependenciesMacros", package: "swift-dependencies"),
-          .product(name: "GRDB", package: "grdb.swift")
+          .product(name: "GRDB", package: "grdb.swift"),
+          .product(name: "LoggerFactory", package: "LoggerFactory"), 
         ]),
       
       // MARK: Tests

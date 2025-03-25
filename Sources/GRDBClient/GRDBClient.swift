@@ -121,7 +121,7 @@ extension GRDBClient: TestDependencyKey {
         backupOptions: DatabaseMigrationBackupOptions? = nil
     ) {
         if !migrations.isEmpty { // skip migrations if there are none.
-            Logger.grdbClient(.migrations).info("Performing migrations: \(migrations)")
+            Log.logger(.migrations).info("Performing migrations: \(migrations)")
             let migrator = DatabaseMigrator(registeringMigrations: migrations)
             
             do {

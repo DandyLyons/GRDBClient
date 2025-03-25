@@ -17,7 +17,7 @@ extension GRDB.Configuration {
         config.prepareDatabase { db in
             db.trace { event in
 #if DEBUG
-                Logger.grdbClient(.transactions).debug("SQL: \(event)")
+                Log.logger(.transactions).debug("SQL: \(event)")
 #endif
             }
         }

@@ -56,14 +56,18 @@ extension DatabaseMigrator {
             // Optionally Delete the backup
             if deleteBackupIfSuccessful {
                 try backupDBWriter.close()
-                Logger.grdbClient(.backups).info("Migration was successful. Deleting backup now.")
+                
+                Log.logger(.backups)
+                    .info("Migration was successful. Deleting backup now.")
                 try FileManager.default.removeItem(atPath: databaseBackupFilePath)
             } else {
-                Logger.grdbClient(.backups).info("Migration was successful. Pre-migration backup located at: \(databaseBackupFilePath)")
+                Log.logger(.backups)
+                    .info("Migration was successful. Pre-migration backup located at: \(databaseBackupFilePath)")
             }
         } catch {
             // If migration fails, log the error and keep the backup
-            Logger.grdbClient(.migrations).error("Migration failed: \(error). Backup preserved at: \(databaseBackupFilePath)")
+            Log.logger(.migrations)
+                .error("Migration failed with error: \(error). \nBackup preserved at: \(databaseBackupFilePath)")
             throw error
         }
     }

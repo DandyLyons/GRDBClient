@@ -15,8 +15,10 @@ extension DatabaseWriter {
           try db.execute(sql: "DELETE FROM sqlite_sequence WHERE name = ?", arguments: [table])
         }
       }
+        Log.logger(.transactions).info("Successfully cleared database.")
     } catch {
-        Logger.grdbClient(.transactions).error("Failed to clear database: \(error)")
+        Log.logger(.transactions)
+            .error("Failed to clear database: \(error)")
     }
   }
 }
